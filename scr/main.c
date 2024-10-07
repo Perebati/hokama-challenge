@@ -62,7 +62,7 @@ Color** multiplicarMatrizes(Color** matrizColor, Mask** matrizMask, int n) {
 
 int main() {
     char codification[3];
-    int i, j, k, r, g, b, m1, m2, m3;
+    unsigned int i, j, k, n1, n2, max_color_scale, r, g, b, m1, m2, m3;
     
     scanf("%2s", codification);
 
@@ -71,14 +71,12 @@ int main() {
         return 1;
     }
 
-    unsigned int n1, n2;
     scanf("%u %u", &n1, &n2);
 
     if(n1 != n2){
         printf("Erro: Os valores para \"n\" devem ser inteiro positvos iguais!\n");
     }
 
-    unsigned int max_color_scale;
     scanf("%u", &max_color_scale);
 
     Color** matrizColor = alocarMatrizColor(n1);
@@ -100,7 +98,7 @@ int main() {
     }
 
     for (i = 0; i < n1; i++) {
-        for (int j = 0; j < n1; j++) {
+        for (j = 0; j < n1; j++) {
             scanf("%d %d %d", &m1, &m2, &m3);
 
             if ((m1 != 0 && m1 != 1) || (m2 != 0 && m2 != 1) || (m3 != 0 && m3 != 1)) {
